@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Конвертер валют</title>
+  <link rel="stylesheet" href="./css/style.css">
+</head>
+<body>
+  <div class="converter-container">
+    <div class="tabs">
+      <div class="tab active" id="tabConverter">Конвертер</div>
+      <div class="tab" id="tabRates">Курси</div>
+      <div class="tab" id="tabInfo">Інформація</div>
+    </div>
+
+    <div id="converterTab" class="tab-content">
+      <div class="form-group">
+        <input type="number" id="amount" placeholder="Введіть суму" />
+        <select id="fromCurrency"></select>
+        <select id="toCurrency"></select>
+        <button id="convertBtn">Конвертувати</button>
+      </div>
+
+      <div class="result" id="result"></div>
+      <canvas id="rateChart" width="400" height="200"></canvas>
+    </div>
+
+    <div id="ratesTab" class="tab-content" style="display: none;">
+      <h3>Курси валют</h3>
+      <p>Актуальні курси валют відносно <strong>USD</strong>.</p>
+      <table id="ratesTable">
+        <thead>
+          <tr style="background-color: #f3f4f6; text-align: center;">
+            <th>Валюта</th>
+            <th>Курс</th>
+          </tr>
+        </thead>
+        <tbody></tbody>
+      </table>
+      <button id="refreshRates">Оновити курси</button>
+      <button id="backToConverter">Повернутися</button>
+    </div>
+
+    <div id="infoTab" class="tab-content" style="display: none;">
+      <h3>Інформація про конвертер</h3>
+      <p>Цей конвертер дозволяє вам швидко та зручно обмінювати валюти на основі актуальних курсів валют, що надаються через API.</p>
+      <h4>Як працює конвертер?</h4>
+      <p>Конвертер використовує API для отримання актуальних курсів валют і дозволяє користувачам обирати дві валюти для конвертації.</p>
+      <h4>Підтримувані валюти:</h4>
+      <ul>
+        <li>USD - Долар США</li>
+        <li>EUR - Євро</li>
+        <li>UAH - Гривня</li>
+        <li>GBP - Фунт стерлінгів</li>
+        <li>JPY - Єна</li>
+        <li>CAD - Канадський долар</li>
+        <li>AUD - Австралійський долар</li>
+        <li>CHF - Швейцарський франк</li>
+        <li>CNY - Юань</li>
+      </ul>
+      <button id="backToInfo">Повернутися</button>
+    </div>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
